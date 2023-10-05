@@ -50,7 +50,11 @@ console.log(risultato1);
  se n è uguale a 400.
 */
 
-//function boundary(n)
+function boundary(n) {
+  return (n >= 20 && n <= 100) || n === 400;
+}
+let risultato2 = boundary(78);
+console.log(risultato2);
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -58,14 +62,26 @@ console.log(risultato1);
  ritornare la stringa originale senza alterarla.
 */
 
-//function epify (){ }
+function epify(str) {
+  if (str.startsWith("EPICODE")) {
+    return str;
+  } else {
+    return "EPICODE" + str;
+  }
+}
+let risultato4 = epify("è un bel corso");
+console.log(risultato4);
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
 
-//function check3and7 (){}
+function check3and7(np) {
+  return np % 7 === 0 || np % 3 === 0;
+}
+let risultato3 = check3and7(9);
+console.log(risultato3);
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
@@ -82,19 +98,33 @@ console.log(risultato);
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
 
-//function upperFirst () {}
+function upperFirst(string) {}
+let upperLetters = upperFirst("le prime lettere sono maiuscole");
+console.log(upperLetters);
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
 
-//metodo slice
-
-//function cutString (){}
+function cutString(strings) {
+  return strings.slice(1, -1);
+}
+let risultato5 = cutString("Amore");
+console.log(risultato5);
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
-//function giveMeRandom (){}
+function giveMeRandom(n) {
+  const numeriCasuali = [];
+
+  for (let i = 0; i < n; i++) {
+    const numeroCasuale = Math.floor(Math.random() * 11);
+    numeriCasuali.push(numeroCasuale);
+  }
+  return numeriCasuali;
+}
+const numeriCasuali = giveMeRandom(5);
+console.log(numeriCasuali);
